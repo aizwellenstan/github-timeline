@@ -18,8 +18,8 @@ const Header = () => {
                 <a href="/" style={{ display: "block" }}>
                     <img className="header__logo" src={logo} alt="logo" />
                 </a>
-                <Button text="Search history" clicked={openHistoryHandler} />
-                <i className="header__history-icon fas fa-history" onClick={openHistoryHandler} />
+                {/* <Button text="Search history" clicked={openHistoryHandler} />
+                <i className="header__history-icon fas fa-history" onClick={openHistoryHandler} /> */}
             </div>
             <p className="header__text">
                 Enter a Github username to generate a timeline and a yearly summary of the user's
