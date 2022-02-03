@@ -1,16 +1,16 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+// import { useDispatch } from "react-redux";
 import logo from "../images/logo.png";
-import Button from "./Button";
+// import Button from "./Button";
 import Form from "./Form";
-import { HISTORY_SHOW } from "../actions/types";
+// import { HISTORY_SHOW } from "../actions/types";
 
 const Header = () => {
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
 
-    const openHistoryHandler = () => {
-        dispatch({ type: HISTORY_SHOW });
-    }
+    // const openHistoryHandler = () => {
+    //     dispatch({ type: HISTORY_SHOW });
+    // }
 
     return (
         <header className="header">
