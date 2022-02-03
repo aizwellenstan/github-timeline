@@ -1,0 +1,131 @@
+.form {
+  width: calc(100% - #{$padding-side-mobile} * 2);
+  max-width: 60rem;
+  height: 15rem;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $color-blue;
+  border-radius: 1rem;
+
+  @include respond(mobile-land) {
+    height: 20rem;
+  }
+
+  &::after {
+    content: "Please enter a username";
+    position: absolute;
+    top: calc(100% + 3rem);
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    color: $color-error;
+    font-size: 1.5rem;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-6rem);
+    transition: all 0.5s;
+
+    @include respond(mobile) {
+      font-size: 1.3rem;
+    }
+  }
+
+  &--error::after {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 4rem;
+    right: 4rem;
+    transform: translateY(-50%);
+    display: flex;
+
+    @include respond(mobile-land) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__input-wrapper {
+    flex: 1;
+    margin-right: 4rem;
+    position: relative;
+
+    @include respond(mobile-land) {
+      flex: initial;
+      margin-bottom: 2.5rem;
+      margin-right: 0;
+      width: 100%;
+      max-width: 40rem;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      height: 2px;
+      background-color: $color-azure;
+      width: 0;
+      transition: width 0.4s;
+    }
+
+    &::before {
+      left: 0;
+    }
+
+    &::after {
+      right: 0;
+    }
+
+    &.focused::before,
+    &.focused::after {
+      width: 50%;
+    }
+  }
+
+  &__input {
+    height: 100%;
+    width: 100%;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    padding: 1.5rem;
+    transition: all 0.5s;
+
+    &::placeholder {
+      color: currentColor;
+      opacity: 0.3;
+    }
+
+    @include respond(mobile) {
+      font-size: 1.3rem;
+    }
+  }
+
+  &--error &__input {
+    border-color: $color-error;
+  }
+
+  .button {
+    @include respond(mobile-land) {
+      width: 100%;
+      max-width: 30rem;
+      font-size: 1.2rem;
+
+      &__icon {
+        font-size: 1.3rem;
+      }
+    }
+  }
+}

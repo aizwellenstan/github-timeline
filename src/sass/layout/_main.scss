@@ -1,0 +1,12 @@
+.main {
+  padding: 15rem $padding-side-desktop 10rem;
+  overflow-x: hidden;
+
+  @include respond(tablet-land) {
+    padding: 15rem $padding-side-mobile 10rem;
+  }
+
+  @include respond(mobile) {
+    padding-bottom: 7rem;
+  }
+}

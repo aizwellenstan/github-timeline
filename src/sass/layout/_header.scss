@@ -1,0 +1,79 @@
+.header {
+  width: 100%;
+  height: 39rem;
+  padding: 5rem $padding-side-desktop;
+  position: relative;
+  background-color: $color-dark-blue-2;
+  background-image: url("../../images/Liquid-Cheese.svg");
+  background-attachment: fixed;
+  background-size: cover;
+
+  @include respond(tablet-land) {
+    padding: 5rem $padding-side-mobile;
+  }
+
+  @include respond(tablet) {
+    height: auto;
+    padding-top: 3rem;
+    padding-bottom: 15rem;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .button {
+      @include respond(mobile) {
+        display: none;
+      }
+    }
+  }
+
+  &__logo {
+    width: 18rem;
+    display: block;
+
+    @include respond(mobile) {
+      width: 35vw;
+      max-width: 14rem;
+    }
+  }
+
+  &__history-icon {
+    display: none !important;
+
+    @include respond(mobile) {
+      display: block !important;
+      font-size: 2rem;
+    }
+  }
+
+  &__text {
+    margin: 7rem auto 0;
+    text-align: center;
+    width: 100%;
+    max-width: 50rem;
+    line-height: 1.6;
+    position: relative;
+
+    @include respond(tablet) {
+      margin-top: 8rem;
+    }
+
+    @include respond(mobile) {
+      font-size: 1.4rem;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: calc(100% + 2rem);
+      width: 8rem;
+      height: 0.5rem;
+      background-color: $color-azure;
+    }
+  }
+}
