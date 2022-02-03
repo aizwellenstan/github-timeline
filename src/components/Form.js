@@ -33,7 +33,6 @@ const Form = () => {
             shouldValidate.current = false;
         }
 
-        var submitted = false
         setUsername("aizwellenstan");
     }, [loading])
 
